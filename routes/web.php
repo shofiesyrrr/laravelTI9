@@ -48,3 +48,6 @@ Route::get('/Form', [FormController::class, 'index']);
 Route::post('/hasil', [FormController::class, 'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
+
+Route::get('/biodata', [SkillController::class, 'data']);
+Route::post('/hasil', [SkillController::class, 'hasil']);
