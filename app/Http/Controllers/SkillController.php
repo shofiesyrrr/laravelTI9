@@ -11,7 +11,7 @@ class SkillController extends Controller
      */
     public function index()
     {
-        return view('biodata');
+        return view('Skill');
     }
 
     /**
@@ -19,23 +19,22 @@ class SkillController extends Controller
      */
     public function create()
     {
-        $ar_lokasi = ['Jakarta','Bekasi','Depok','Solo','Bandung'];
-        $ar_skill = ['PHP','MySQL','Javascript','HTML','CSS'];
-        return view('biodata',['lokasi'=>$ar_lokasi,'skill'=>$ar_skill]);
+        
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function skillhasil(Request $request)
     {
         $this->validate($request, [
-            'nama' => 'required|min:5|max:20',
+            'nama' => 'required',
+            'email' => 'required',
             'lokasi' => 'required',
             'jenis_kelamin' => 'required',
             'skill' => 'required',
         ]);
-        return view('hasil', ['data' => $request]);
+        return view('skillhasil', ['data' => $request]);
     }
 
     /**
